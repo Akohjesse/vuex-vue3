@@ -1,18 +1,31 @@
 <template>
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+   <Counter/>
+   <Countersquare/>
+   <buttons class="buttons"/>
+   <Color-code/>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    'Counter': require('@/components/counter.vue').default, 
+    'Countersquare': require('@/components/counterSquared.vue').default,
+    'buttons': require('@/components/buttons.vue').default,
+    'Color-code': require('@/components/colorcode.vue').default
   }
 }
 </script>
+
+
+<style lang="scss" scoped>
+div{
+   margin-bottom: 20px;
+}
+.counter{
+ font-size: 80px;
+}
+</style>
